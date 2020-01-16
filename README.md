@@ -30,19 +30,34 @@ groups_usersテーブル
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
+Association
+- belongs_to :group
+- belongs_to :user
+
 usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|nickname|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+
+Association
+- has_many : groups
+- has_many : messages
 
 groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|group_name|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+
+Association
+- has_many : groups_users
+- has_many : users, through: :groups_users
+- has_many : messages
 
 messagesテーブル
 
@@ -50,9 +65,9 @@ messagesテーブル
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
+|text|text|null: false|
+|image|text||
 
-### Association
+Association
 - belongs_to :group
 - belongs_to :user
-- has_many :messages
-- has_many :groups_users
