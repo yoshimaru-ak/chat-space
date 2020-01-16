@@ -45,14 +45,13 @@ usersテーブル
 Association
 - has_many : groups
 - has_many : messages
+- has_many : groups_users
 
 groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|integer|null: false, foreign_key: true|
-|group_name|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|name|integer|null: false, foreign_key: true|
 
 Association
 - has_many : groups_users
