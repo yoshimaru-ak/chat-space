@@ -7,30 +7,39 @@
 }
 
 .side {
-  position: relative;
+  height: 100vh;
+  width: 100vw;
   &-top {
     background-color: #253141;
-    height: 100vh;
+    height: 100px;
     width: 300px;
+    display: flex;
+    align-items: center;
     &__box {
-      display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-weight: bold;
-    
+    background-color: red;
+    width: calc(100vw - 40px);
+    height: 20px;
+    margin: 0px 20px 0px 20px;
+    display: flex;
+      &__name {
+      
+      }
+      &__icon {
+        
+      }
     }
   }
   &-bottom {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     width: 300px;
-    position: absolute;
-    bottom: 0;
   }
 }
 
 .main {
-  position: relative;
+  height: 100vh;
+  width: 100vw;
+
   &-top {
     background-color: #ffffff;
     height: 100px;
@@ -46,8 +55,6 @@
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
-    position: absolute;
-    bottom: 0;
   }
   
 }
