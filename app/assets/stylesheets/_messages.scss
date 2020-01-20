@@ -8,53 +8,174 @@
 
 .side {
   height: 100vh;
-  width: 100vw;
+  width: 300px;
+  float: left;
+  color: white;
   &-top {
     background-color: #253141;
     height: 100px;
-    width: 300px;
     display: flex;
     align-items: center;
+    padding: 0px 20px;
+    width: 300px;
     &__box {
-    background-color: red;
     width: calc(100vw - 40px);
     height: 20px;
-    margin: 0px 20px 0px 20px;
     display: flex;
+    justify-content: space-between;
+    font-weight: bold;
       &__name {
-      
+        margin: 0;
+        padding: 0;
       }
-      &__icon {
-        
-      }
+      &__menu {
+          display: flex;
+          &__group {
+            margin: 0;
+            padding: 0;
+            a {
+              color: white;
+              margin-left: 0.3rem;
+            }
+          }
+          &__edit {
+            margin: 0;
+            padding: 0;
+            a {
+              color: white;
+              margin-left: 0.3rem;
+            }
+          }
+        }
     }
   }
   &-bottom {
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     width: 300px;
+    padding: 20px 20px 0;
+    &__group {
+    font-weight: bold;
+    margin-bottom: 40px;
+      &__name {
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
   }
 }
 
 .main {
   height: 100vh;
-  width: 100vw;
-
+  width: calc(100vw - 300px);
+  float: left;
   &-top {
-    background-color: #ffffff;
     height: 100px;
-    width: calc(100vw - 300px);
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
     border-bottom: solid 1px #eee;
+    overflow: scroll;
+    &__box {
+      margin-top: 35px;
+      &__name {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+      }
+      &__message {
+        display: flex;
+        font-size: 12px;
+        color: #999999;
+      }
+
+      &__edit {
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 30px;
+        border: solid 1px #38aef0;
+        position: absolute;
+        right: 40px;
+      }
+    }
   }
   &-center {
     background-color:#fafafa;
     width: calc(100vw - 300px);
     height: calc(100vh - 190px);
+    padding: 46px 40px;
+    background-color: #fafafa;
+    overflow: scroll;
+    &__box {
+      padding-bottom: 40px;
+      &__name {
+        display: flex;
+        margin-bottom: 10px;
+        &__user {
+          color: #434a54;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__time {
+          color: #999999;
+          font-size: 12px;
+          margin-left: 10px;
+        }
+        &__text {
+          &__input {
+            color: #434a54;
+            font-size: 14px;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
   }
   &-bottom {
     background-color: #d2d2d2;
     height: 90px;
     width: calc(100vw - 300px);
+    padding: 20px 40px;
+
+  bottom {
+    display: flex;
+    .input-box {
+      display: flex;
+      width: 100%;
+      position: relative;
+      &__text {
+        height: 50px;
+        width: 100%;
+        color: #434a54;
+        border-style: none;
+        padding: 0 40px 0 10px;
+      }
+      &__image {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 1.3rem;
+        &__file {
+          display: none;
+        }
+      }
+    }
+    .submit-btn {
+      width: 100px;
+      height: 50px;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: #38aef0;
+      color: white;
+      cursor: pointer;
+    }
+  }
   }
   
 }
