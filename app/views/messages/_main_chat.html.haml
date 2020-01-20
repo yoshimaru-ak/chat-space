@@ -1,0 +1,28 @@
+.main
+  .main-top
+    .main-top__box
+      %p.main-top__box__name
+        yoshiaki
+      %p.main-top__box__message
+        Member:yoshi
+    .main-top__box__edit
+      = link_to "#" do
+        Edit
+  .main-center
+    .main-center__box
+      .main-center__box__name
+        %p.main-center__box__name__user
+          yyy
+        %p.main-center__box__name__time
+          2020/01/20(Mon) 16:00
+      .main-center__box__name__text
+        %p.main-center__box__name__text__input
+          こんにちは
+  .main-bottom
+    %bottom.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class:"input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
