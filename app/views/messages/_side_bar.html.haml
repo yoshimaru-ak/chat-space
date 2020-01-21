@@ -1,20 +1,18 @@
-%html
-  %body
-  .side
-    .side-top
-      .side-top__box
-        %p.side-top__box__name
-          yoshi
-        .side-top__box__menu
-          .side-top__box__menu__group
-            = link_to "" do
-              = icon("fa", "edit", class: "icon")
-          .side-top__box__menu__edit
-            =link_to "" do
-              = icon("fa","cog")
-    .side-bottom
-      .side-bottom__group
-        %p.side-bottom__group__name
-          yoshiaki
-        %p.side-bottom__group__message
-          メッセージはない
+.side
+  .side-top
+    .side-top__box
+      = current_user.name
+    %p.side-top__box__name
+    .side-top__box__menu
+      .side-top__box__menu__group
+        = link_to "" do
+          = icon("fa", "edit", class: "icon")
+      .side-top__box__menu__edit
+        =link_to "" do
+          = icon("fa","cog")
+  .side-bottom
+    .side-bottom__group
+      %p.side-bottom__group__name
+        yoshiaki
+      %p.side-bottom__group__message
+        -# メッセージはない
