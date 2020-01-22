@@ -1,0 +1,11 @@
+.main-center__box
+  .main-center__box__name
+    %p.main-center__box__name__user
+      = message.user.name
+    %p.main-center__box__name__time
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .main-center__box__name__text
+    - if message.content.present?
+      %p.main-center__box__name__text__input
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

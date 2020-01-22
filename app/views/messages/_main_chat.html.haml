@@ -2,27 +2,57 @@
   .main-top
     .main-top__box
       %p.main-top__box__name
-        yoshiaki
+        = @group.name
       %p.main-top__box__message
-        Member:yoshi
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .main-top__box__edit
-      = link_to "#" do
+      = link_to edit_group_path(current_user) do
         Edit
   .main-center
-    .main-center__box
-      .main-center__box__name
-        %p.main-center__box__name__user
-          yyy
-        %p.main-center__box__name__time
-          2020/01/20(Mon) 16:00
-      .main-center__box__name__text
-        %p.main-center__box__name__text__input
-          こんにちは
+    = render @messages
   .main-bottom
-    %bottom.new_message
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class:"input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+    = form_for [@group, @message] do |f|
+      %bottom.new_message
+        .input-box
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          = f.label :image, class: 'input-box__image' do
+            = icon('fas', 'image')
+            = f.file_field :image, class: 'input-box__image__file'
+        = f.submit 'Send', class: 'submit-btn'
+
+
+  
+  
+  -# .form
+  -#     = form_for [@group, @message] do |f|
+  -#       = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+  -#       .form__mask
+  -#         = f.label :image, class: 'form__mask__image' do
+  -#           = icon('fas', 'image', class: 'icon')
+  -#           = f.file_field :image, class: 'hidden'
+  -#       = f.submit 'Send', class: 'form__submit'
+  
+  
+  
+  
+  
+  
+  
+  
+  -# .main-bottom
+  -#   = form_for [@group, @message] do |f|
+  -#     = f.text_field :content, class: 'main-bottom__message', placeholder: 'type a message'
+  -#     .main-bottom__mask
+  -#       = f.label :image, class: 'main-bottom__mask__image' do
+  -#         = icon('fas', 'image', class: 'icon')
+  -#         = f.file_field :image, class: 'hidden'
+  -#     = f.submit 'Send', class: 'form__submit'
+
+
+
+
+
+
+      
