@@ -58,6 +58,7 @@ $(function(){
         $('.new_message')[0].reset();
         $('.box').animate({'height' : '200px'});
         $('.main-center').animate({ scrollTop: $('.main-center')[0].scrollHeight});
+        $('.submit-btn').prop('disabled', false);
       })
   })
 });
