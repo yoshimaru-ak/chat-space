@@ -52,10 +52,12 @@ $(function(){
       processData: false,
       contentType: false
     })
-      .done(function(data){
-        var html = buildHTML(data);
-        $('.messages').append(html);
-        $('from')[0].reset();
+      .done(function(message){
+        var html = buildHTML(message);
+        $('.main-center').append(html);
+        $('.new_message')[0].reset();
+        $('.box').animate({'height' : '200px'});
+        $('.main-center').animate({ scrollTop: $('.main-center')[0].scrollHeight});
       })
   })
 });
