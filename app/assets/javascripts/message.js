@@ -60,5 +60,8 @@ $(function(){
         $('.main-center').animate({ scrollTop: $('.main-center')[0].scrollHeight});
         $('.submit-btn').prop('disabled', false);
       })
+      .fail(function() {
+        alert("メッセージ送信に失敗しました");
+    });
   })
 });
