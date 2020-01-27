@@ -54,7 +54,6 @@ $(function(){
     };
   }
   $('.new_message').on('submit',function(e){
-    console.log("OK");
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
@@ -67,7 +66,6 @@ $(function(){
       contentType: false
     })
       .done(function(message){
-        console.log(message);
         var html = buildHTML(message);
         $('.main-center').append(html);
         $('.new_message')[0].reset();
