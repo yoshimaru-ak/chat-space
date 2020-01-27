@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message) {
     if ( message.content && message.image ) {
       var html =
-        `<div class="main-center__box" data-message-id=${message.id}>
+        `<div class="main-center__box" data-message-id="${message.id}">
           <div class="main-center__box__name">
             <div class="main-center__box__name__user">
               ${message.user_name}
@@ -16,12 +16,12 @@ $(function(){
               ${message.content}
             </p>
           </div>
-          <img src=${message.image} >
+          <img src="${message.image}" >
         </div>`
       return html;
     } else if (message.content) {
       var html =
-        `<div class="main-center__box" data-message-id=${message.id}>
+        `<div class="main-center__box" data-message-id="${message.id}">
           <div class="main-center__box__name">
             <div class="main-center__box__name__user">
               ${message.user_name}
@@ -38,7 +38,7 @@ $(function(){
         </div>`
       return html;
     } else if (message.image) {
-      var html = `<div class="main-center__box" data-message-id=${message.id}>
+      var html = `<div class="main-center__box" data-message-id="${message.id}">
       <div class="main-center__box__name">
           <div class="main-center__box__name__user">
             ${message.user_name}
@@ -46,8 +46,11 @@ $(function(){
           <div class="main-center__box__name__time">
             ${message.created_at}
           </div>
-        <img src=${message.image} >
+      </div>
+      <img src="${message.image}" >
       </div>`
+
+      return html;
     };
   }
   $('.new_message').on('submit',function(e){
@@ -97,7 +100,7 @@ $(function(){
         }
       })
       .fail(function(){
-        console.log('error');
+        alert('error');
       })
     }
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
