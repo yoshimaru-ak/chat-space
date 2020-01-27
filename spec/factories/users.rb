@@ -6,4 +6,9 @@ FactoryBot.define do
     password {password}
     password_confirmation {password}
   end
+
+  def self.search(input, id)
+    return nil if input == ""
+    User.where(['name LINK ?', "%#{input}%"] ).where.not(id: id).limit(10)
+  end
 end
