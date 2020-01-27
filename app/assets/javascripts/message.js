@@ -71,7 +71,6 @@ $(function(){
         var html = buildHTML(message);
         $('.main-center').append(html);
         $('.new_message')[0].reset();
-        // $('.box').animate({'height' : '200px'});
         $('.main-center').animate({ scrollTop: $('.main-center')[0].scrollHeight});
         $('.submit-btn').prop('disabled', false);
       })
