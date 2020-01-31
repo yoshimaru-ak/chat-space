@@ -66,6 +66,7 @@ $(function(){
       contentType: false
     })
       .done(function(message){
+        console.log(message)
         var html = buildHTML(message);
         $('.main-center').append(html);
         $('.new_message')[0].reset();
@@ -103,4 +104,4 @@ $(function(){
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 7000);
   }
-});
+}); 
